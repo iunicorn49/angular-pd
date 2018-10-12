@@ -65,11 +65,26 @@
 
 > 允许你向**HTML**添加自定义行为.
 
+##### *ngFor
+
+> 循环
+
+```html
+<li *ngFor="let stock of stocks; let i = index;">
+	<div>{{i}} {{stock.name}}</div>
+</li>
+```
+
 #### 模块(NgModule)
 
 > 由`@NgModule()`装饰的TypeScript类.
 > 用来将应用中不同的部分组织成一个**Angular**框架可以理解的单元.
 > [组件, 服务, 指令]是用来打包完成某一项功能, 模块是则是用来分发这一功能.
+
+## 路由
+
+> Angular Route.
+
 
 ## 工具
 
@@ -82,7 +97,11 @@ npm install -g @angular/cli #安装命令行工具
 
 ng -v #查看版本
 
-ng new [project] #创建项目 project 是项目的名字
+ng new [project] #创建项目 [项目]
+
+ng g component [component] #创建组件 [组件名] 
+
+ng g component [mkdir/component] #创建组件 [文件夹/组件名]
 ```
 
 #### 命令生成的项目目录
