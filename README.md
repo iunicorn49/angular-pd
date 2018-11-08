@@ -1,3 +1,7 @@
+# LOG
+
+2018-11-08 13:47, 公司提交, 准备回家做.
+
 # NgApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.1.
