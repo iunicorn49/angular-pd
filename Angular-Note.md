@@ -85,7 +85,34 @@
 
 > Angular Route.
 
-### 
+文档: https://angular.cn/guide/router
+
+### 传递数据
+
+#### 在查询参数中传递数据
+
+#### 在路由路径中传递数据
+
+#### 在路由配置中传递数据
+
+### 重定向路由
+
+> 在用户访问一个特点的地址时, 将其重定向到另一个指定的地址.
+> 例如: www.aaa.com => www.aaa.com/products
+> 例如: www.aaa.com/x => www.aaa.com/y
+
+```typescript
+const routes: Routes = [
+  { path: '', redirectTo: '/home', pathMatch: 'full' }, // 当路径为空的时候, 重定向到 /home
+  { path: 's', redirectTo: '/stock', pathMatch: 'prefix' }, // 当路径为/s的时候, 重定向到 /stock
+  { path: 'home', component: HomeComponent },
+  { path: 'stock', component: StockComponent, data: [{isPro: true}] },
+  { path: 'test/:id', component: TestComponent },
+  { path: '**', component: Code404Component }
+];
+```
+
+### 子路由
 
 ## 工具
 
