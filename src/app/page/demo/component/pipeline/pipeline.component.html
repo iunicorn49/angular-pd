@@ -1,0 +1,11 @@
+<div>
+  <h3>管道就是filter</h3>
+  <p>现在展示的是ng内置的管道, 多个管道一起使用</p>
+  <div>多个管道连接: {{time | date | uppercase}}</div>
+  <div>date管道: {{time | date: 'yyyy-MM-dd HH:mm:ss'}}</div>
+  <div>lowercase管道: {{'ABCD' | lowercase}}</div>
+  <p>number管道, n位整数.最小位数小数-最大位数小数, 最大最小相同的情况, 就是固定n位小数.</p>
+  <div>number管道: {{pi | number: '1.2-2'}}</div>
+  <h3>自定义管道: ng g pipe [path]</h3>
+  <div>pipeline(自定义管道): {{'something' | pipeline: '自定义参数'}}</div>
+</div>
