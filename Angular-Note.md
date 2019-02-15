@@ -114,6 +114,18 @@ const routes: Routes = [
 
 ### 子路由
 
+## 依赖注入 (Dependency Injection)
+
+### 注入器
+
+> 直接在构造函数中 **constructor** 中声明即可.
+
+### 提供器
+
+> 简写版本: `providers: [ProductService]`
+> 正常版本: `providers: [{provide: ProductService, useClass: ProductService}]`
+> 工厂方法: `providers: [{provide: ProductService, useFactory: () => {...} }]`
+
 ## 工具
 
 ### AngularCLI

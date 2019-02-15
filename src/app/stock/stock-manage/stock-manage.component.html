@@ -1,6 +1,6 @@
 <div class="box">
   <div class="box-header with-border">
-    <a class="btn btn-success btn-sm">
+    <a class="btn btn-success btn-sm" (click)="create()">
       <span class="glyphicon glyphicon-plus"></span>
       创建
     </a>
@@ -32,7 +32,7 @@
         <td>{{stock.price}}</td>
         <td><app-stars [rating]="stock.rating"></app-stars></td>
         <td>
-          <a style="margin-right: 15px;" class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-pencil"></span>修改</a>
+          <a (click)="update(stock)" style="margin-right: 15px;" class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-pencil"></span>修改</a>
           <a class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span>删除</a>
         </td>
       </tr>
