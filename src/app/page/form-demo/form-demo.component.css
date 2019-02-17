@@ -1,0 +1,8 @@
+.form-demo-link {
+  color: #333;
+  margin-right: 30px;
+}
+
+.form-demo-link.active {
+  color: #ff5d5d;
+}

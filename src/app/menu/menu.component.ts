@@ -17,7 +17,8 @@ export class MenuComponent implements OnInit {
     this.menus = [
       new Menu(1, '首页', 'dashboard'),
       new Menu(2, '股票详情', 'stock'),
-      new Menu(3, '元素测试', 'demo')
+      new Menu(3, '元素测试', 'demo'),
+      new Menu(4, '表单demo', 'form-demo'),
     ];
   }
 

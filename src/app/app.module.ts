@@ -19,13 +19,25 @@ import { DemoComponent } from './page/demo/demo.component';
 import { PipelineComponent } from './page/demo/component/pipeline/pipeline.component';
 import { PipelinePipe } from './page/demo/component/pipeline.pipe';
 import { StockFilterPipe } from './stock/stock-filter.pipe';
+import { FormDemoComponent } from './page/form-demo/form-demo.component';
+import { TemplateFormComponent } from './page/form-demo/component/template-form/template-form.component';
+import { ResponsiveFormComponent } from './page/form-demo/component/responsive-form/responsive-form.component';
 
 const routeConfig: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'stock', component: StockManageComponent },
   { path: 'stock/:id', component: StockFormComponent },
-  { path: 'demo', component: DemoComponent }
+  { path: 'demo', component: DemoComponent },
+  { 
+    path: 'form-demo', 
+    component: FormDemoComponent,
+    children: [
+      { path: '', redirectTo: '/form-demo/responsive-form', pathMatch: 'full' },
+      { path: 'template-form', component: TemplateFormComponent },
+      { path: 'responsive-form', component: ResponsiveFormComponent },
+    ]
+  }
 ];
 
 @NgModule({
@@ -42,8 +54,11 @@ const routeConfig: Routes = [
     StockFormComponent,
     DemoComponent,
     PipelineComponent,
-    PipelinePipe, // 这是一个自定义管道
+    PipelinePipe,
     StockFilterPipe,
+    FormDemoComponent,
+    TemplateFormComponent,
+    ResponsiveFormComponent,
   ],
   imports: [
     BrowserModule,
