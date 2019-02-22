@@ -2,7 +2,19 @@
 
 <form [formGroup]="formModel" (submit)="createUser()">
   <div>昵称: <input formControlName="nickname" type="text" /></div>
+  <div class="error" [hidden]="!formModel.hasError('required', 'nickname')">
+    昵称是必填项
+  </div>
+  <div class="error" [hidden]="!formModel.hasError('minlength', 'nickname')">
+    昵称最小长度为6
+  </div>
   <div>手机号: <input formControlName="mobile" type="number" /></div>
+  <div class="error" [hidden]="!formModel.hasError('required', 'mobile')">
+    请填写手机号
+  </div>
+  <div class="error" [hidden]="!formModel.hasError('reg', 'mobile')">
+    手机号不合法
+  </div>
   <div>邮箱:
     <ul formArrayName="emails">
       <li *ngFor="let e of this.formModel.get('emails').controls;let i = index">
@@ -12,9 +24,19 @@
     <button (click)="addEmail()">增加邮箱</button>
   </div>
   <div formGroupName="passwordInfo">
-    <div>密码: <input formControlName="password" type="password" /></div>
-    <div>确认密码: <input formControlName="passwordConfirm" type="password" /></div>
+    <div>密码: <input formControlName="password" type="password" autocomplete /></div>
+    <div class="error" [hidden]="!formModel.hasError('required', 'passwordInfo.password')">
+      密码是必填项
+    </div>
+    <div>确认密码: <input formControlName="passwordConfirm" type="password" autocomplete /></div>
+    <div class="error" [hidden]="!formModel.hasError('unequal', 'passwordInfo')">
+      {{formModel.getError('unequal', 'passwordInfo')?.msg}}
+    </div>
   </div>
 
   <button type="submit">提交</button>
 </form>
+
+<h1 style="color: #ff5d5d;">
+  {{formModel.status}}
+</h1>
