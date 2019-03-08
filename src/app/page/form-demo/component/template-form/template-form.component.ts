@@ -12,7 +12,9 @@ export class TemplateFormComponent implements OnInit {
   ngOnInit() {
   }
 
-  handleSubmit(formData: any) {
-    console.log({formData});
+  handleSubmit(formData: any, valid: boolean) {
+    // console.log({
+    //   formData, valid
+    // });
   }
 }

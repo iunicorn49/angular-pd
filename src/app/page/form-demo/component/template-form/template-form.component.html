@@ -1,25 +1,36 @@
 <h3>模板式表单</h3>
 
-<form
-  #myForm="ngForm"
-  (ngSubmit)="handleSubmit(myForm.value)"
->
+<form #myForm="ngForm" (ngSubmit)="handleSubmit(myForm.value, myForm.valid)">
   <div>
     <label>用户名:</label>
     <input ngModel name="username" type="text" />
   </div>
+
   <div>
-      <label>邮箱:</label>
-      <input ngModel name="email" type="email" />
-    </div>
-  <div ngModelGroup="passwordInfo">
+    <label>手机号:</label>
+    <input ngModel appMobile name="mobile" type="number">
+  </div>
+
+  <div [hidden]="!myForm.form.hasError('required', 'mobile')" style="color: #ff5d5d;">
+    手机号必填
+  </div>
+
+  <div [hidden]="!myForm.form.hasError('reg', 'mobile')" style="color: #ff5d5d;">
+    手机号格式错误
+  </div>
+
+  <div>
+    <label>邮箱:</label>
+    <input ngModel name="email" type="email"/>
+  </div>
+  <div ngModelGroup="passwordInfo" appPassword>
     <div>
       <label>密码:</label>
-      <input ngModel name="password" type="password" />
+      <input ngModel name="password" type="password"/>
     </div>
     <div>
       <label>确认密码:</label>
-      <input ngModel name="confirmPassword" type="password" />
+      <input ngModel name="passwordConfirm" type="password"/>
     </div>
   </div>
   <button type="submit">提交</button>

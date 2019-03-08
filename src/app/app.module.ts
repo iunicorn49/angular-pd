@@ -22,6 +22,8 @@ import { StockFilterPipe } from './stock/stock-filter.pipe';
 import { FormDemoComponent } from './page/form-demo/form-demo.component';
 import { TemplateFormComponent } from './page/form-demo/component/template-form/template-form.component';
 import { ResponsiveFormComponent } from './page/form-demo/component/responsive-form/responsive-form.component';
+import { MobileValidatorDirective } from './directives/mobile-validator.directive';
+import { PasswordValidatorDirective } from './directives/password-validator.directive';
 
 const routeConfig: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -29,11 +31,11 @@ const routeConfig: Routes = [
   { path: 'stock', component: StockManageComponent },
   { path: 'stock/:id', component: StockFormComponent },
   { path: 'demo', component: DemoComponent },
-  { 
-    path: 'form-demo', 
+  {
+    path: 'form-demo',
     component: FormDemoComponent,
     children: [
-      { path: '', redirectTo: '/form-demo/responsive-form', pathMatch: 'full' },
+      { path: '', redirectTo: '/form-demo/template-form', pathMatch: 'full' },
       { path: 'template-form', component: TemplateFormComponent },
       { path: 'responsive-form', component: ResponsiveFormComponent },
     ]
@@ -59,6 +61,8 @@ const routeConfig: Routes = [
     FormDemoComponent,
     TemplateFormComponent,
     ResponsiveFormComponent,
+    MobileValidatorDirective,
+    PasswordValidatorDirective,
   ],
   imports: [
     BrowserModule,

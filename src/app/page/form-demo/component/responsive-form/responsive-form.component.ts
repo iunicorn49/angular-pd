@@ -55,7 +55,6 @@ export class ResponsiveFormComponent implements OnInit {
         [''],
       ])
     });
-    console.log(this.formModel);
   }
 
   ngOnInit() {
@@ -74,3 +73,15 @@ export class ResponsiveFormComponent implements OnInit {
     emails.push(new FormControl());
   }
 }
+
+/**
+ * 状态字段
+ */
+const status = {
+  touched: '访问过了',
+  untouched: '没访问过',
+  pristine: '值从未改变过',
+  dirty: '值改变过了',
+  pending: ''
+};
+

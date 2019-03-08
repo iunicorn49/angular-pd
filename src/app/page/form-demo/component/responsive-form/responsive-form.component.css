@@ -3,3 +3,16 @@
 	color: #ff5d5d;
 	font-size: 12px;
 }
+
+input.ng-invalid {
+	border: 1px solid #ff5d5d;
+}
+
+input.ng-valid {
+	border: 1px solid #abcdef;
+}
+
+.inputHasError {
+	color: #ca5d32;
+	border: 3px solid #ca5d32 !important;
+}
