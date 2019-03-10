@@ -1,0 +1,7 @@
+<div>
+  <button class="btn btn-danger" (click)="handleClick()">http请求获取</button>
+</div>
+
+<div *ngFor="let stock of stocks | async">
+  {{stock.name}}
+</div>

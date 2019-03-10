@@ -24,6 +24,9 @@ import { TemplateFormComponent } from './page/form-demo/component/template-form/
 import { ResponsiveFormComponent } from './page/form-demo/component/responsive-form/responsive-form.component';
 import { MobileValidatorDirective } from './directives/mobile-validator.directive';
 import { PasswordValidatorDirective } from './directives/password-validator.directive';
+import { HttpDemoComponent } from './page/http-demo/http-demo.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 const routeConfig: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -39,7 +42,8 @@ const routeConfig: Routes = [
       { path: 'template-form', component: TemplateFormComponent },
       { path: 'responsive-form', component: ResponsiveFormComponent },
     ]
-  }
+  },
+  { path: 'http-demo', component: HttpDemoComponent }
 ];
 
 @NgModule({
@@ -63,11 +67,13 @@ const routeConfig: Routes = [
     ResponsiveFormComponent,
     MobileValidatorDirective,
     PasswordValidatorDirective,
+    HttpDemoComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routeConfig)
   ],
