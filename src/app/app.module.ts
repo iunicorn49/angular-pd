@@ -26,6 +26,8 @@ import { MobileValidatorDirective } from './directives/mobile-validator.directiv
 import { PasswordValidatorDirective } from './directives/password-validator.directive';
 import { HttpDemoComponent } from './page/http-demo/http-demo.component';
 import { HttpClientModule } from '@angular/common/http';
+import { WebsocketDemoComponent } from './page/websocket-demo/websocket-demo.component';
+import { WebSocketService } from './shared/web-socket.service';
 
 
 const routeConfig: Routes = [
@@ -43,7 +45,8 @@ const routeConfig: Routes = [
       { path: 'responsive-form', component: ResponsiveFormComponent },
     ]
   },
-  { path: 'http-demo', component: HttpDemoComponent }
+  { path: 'http-demo', component: HttpDemoComponent },
+  { path: 'websocket-demo', component: WebsocketDemoComponent }
 ];
 
 @NgModule({
@@ -68,6 +71,7 @@ const routeConfig: Routes = [
     MobileValidatorDirective,
     PasswordValidatorDirective,
     HttpDemoComponent,
+    WebsocketDemoComponent,
   ],
   imports: [
     BrowserModule,
@@ -77,7 +81,7 @@ const routeConfig: Routes = [
     ReactiveFormsModule,
     RouterModule.forRoot(routeConfig)
   ],
-  providers: [StockService],
+  providers: [StockService, WebSocketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
